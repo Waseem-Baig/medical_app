@@ -1,51 +1,68 @@
-
-import { motion } from 'framer-motion';
-import { CheckCircle, Zap, Globe, Lock, BarChart, Smartphone } from 'lucide-react';
+import { motion } from "framer-motion";
+import {
+  CheckCircle,
+  Zap,
+  Globe,
+  Lock,
+  BarChart,
+  Smartphone,
+} from "lucide-react";
 
 const Features = () => {
   const features = [
     {
       icon: Zap,
-      title: "Lightning Fast Performance",
-      description: "Optimized for speed with sub-2 second load times and real-time updates across all modules."
+      title: "AI-Powered Lightning Performance",
+      description:
+        "AI-optimized for speed with sub-1 second load times and real-time intelligent updates across all modules.",
     },
     {
       icon: Globe,
-      title: "Multi-Platform Access",
-      description: "Access from any device - web, mobile, or tablet with responsive design and offline capabilities."
+      title: "AI Multi-Platform Access",
+      description:
+        "Smart access from any device with AI-adaptive responsive design and intelligent offline capabilities.",
     },
     {
       icon: Lock,
-      title: "Enterprise Security",
-      description: "Military-grade encryption, 2FA authentication, and comprehensive audit logging."
+      title: "AI-Enhanced Security",
+      description:
+        "Military-grade encryption with AI threat detection, smart 2FA, and comprehensive intelligent audit logging.",
     },
     {
       icon: BarChart,
-      title: "Advanced Analytics",
-      description: "Real-time dashboards with KPI tracking, predictive analytics, and custom reporting."
+      title: "AI Predictive Analytics",
+      description:
+        "Real-time AI dashboards with predictive modeling, machine learning insights, and intelligent custom reporting.",
     },
     {
       icon: Smartphone,
-      title: "Mobile-First Design",
-      description: "Native mobile apps for iOS and Android with push notifications and offline sync."
+      title: "AI Mobile-First Design",
+      description:
+        "Native AI-powered mobile apps with smart notifications, intelligent sync, and predictive user experience.",
     },
     {
       icon: CheckCircle,
-      title: "99.9% Uptime SLA",
-      description: "Guaranteed reliability with redundant systems, automated backups, and 24/7 monitoring."
-    }
+      title: "AI 99.9% Uptime SLA",
+      description:
+        "AI-guaranteed reliability with smart redundant systems, automated backups, and 24/7 intelligent monitoring.",
+    },
   ];
 
   const stats = [
-    { number: "500+", label: "Hospitals Trust Us" },
-    { number: "1M+", label: "Patients Served" },
-    { number: "99.9%", label: "System Uptime" },
-    { number: "24/7", label: "Support Available" }
+    { number: "500+", label: "AI-Enhanced Hospitals" },
+    { number: "1M+", label: "AI-Assisted Patients" },
+    { number: "99.9%", label: "AI System Uptime" },
+    { number: "24/7", label: "AI Support Available" },
   ];
 
   return (
-    <section id="features" className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section
+      id="features"
+      className="py-20 bg-space-gradient relative overflow-hidden"
+    >
+      {/* Background overlay */}
+      <div className="absolute inset-0 bg-black/20"></div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -54,15 +71,16 @@ const Features = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Why Choose
-            <span className="block bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">
-              MedCare HMS?
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            Why Choose Our
+            <span className="block bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+              AI Medical Hub?
             </span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Built with cutting-edge technology and healthcare expertise to deliver 
-            unmatched performance, security, and user experience.
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            Built with cutting-edge AI technology and healthcare expertise to
+            deliver unmatched intelligent performance, security, and user
+            experience.
           </p>
         </motion.div>
 
@@ -75,21 +93,21 @@ const Features = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100"
+              className="glassmorphism rounded-xl p-6 hover:bg-white/10 transition-all duration-300 border border-white/20 group"
             >
               <motion.div
                 whileHover={{ scale: 1.1, rotate: 5 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                className="w-12 h-12 bg-gradient-to-br from-blue-500 to-green-500 rounded-lg flex items-center justify-center mb-4"
+                className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 rounded-lg flex items-center justify-center mb-4 group-hover:shadow-lg group-hover:shadow-blue-500/25"
               >
                 <feature.icon className="w-6 h-6 text-white" />
               </motion.div>
-              
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+
+              <h3 className="text-lg font-semibold text-white mb-2">
                 {feature.title}
               </h3>
-              
-              <p className="text-gray-600 text-sm leading-relaxed">
+
+              <p className="text-gray-300 text-sm leading-relaxed">
                 {feature.description}
               </p>
             </motion.div>
@@ -102,7 +120,7 @@ const Features = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="bg-white rounded-2xl p-8 shadow-xl border border-gray-100"
+          className="glassmorphism rounded-2xl p-8 border border-white/20"
         >
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
@@ -116,11 +134,11 @@ const Features = () => {
               >
                 <motion.div
                   whileHover={{ scale: 1.1 }}
-                  className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent mb-2"
+                  className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-2"
                 >
                   {stat.number}
                 </motion.div>
-                <div className="text-gray-600 text-sm font-medium">
+                <div className="text-gray-300 text-sm font-medium">
                   {stat.label}
                 </div>
               </motion.div>

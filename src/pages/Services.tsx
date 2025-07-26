@@ -1,101 +1,146 @@
-
-import { motion } from 'framer-motion';
-import { Heart, Calendar, Brain, Shield, Users, Phone, Zap, BarChart } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import Navigation from '@/components/Navigation';
+import { motion } from "framer-motion";
+import {
+  Heart,
+  Calendar,
+  Brain,
+  Shield,
+  Users,
+  Phone,
+  Zap,
+  BarChart,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import Navigation from "@/components/Navigation";
 
 const Services = () => {
   const services = [
     {
       icon: Heart,
-      title: "Electronic Health Records (EHR)",
-      description: "Comprehensive patient data management with secure cloud storage, real-time updates, and seamless integration across all departments.",
-      features: ["Patient History Tracking", "Medical Record Management", "Lab Results Integration", "Prescription History"],
-      color: "from-red-500 to-pink-500",
-      bgColor: "bg-red-50"
+      title: "AI-Powered Electronic Health Records (EHR)",
+      description:
+        "Intelligent patient data management with AI insights, secure cloud storage, real-time updates, and seamless integration across all departments.",
+      features: [
+        "AI Patient History Analysis",
+        "Smart Medical Record Management",
+        "Automated Lab Results Integration",
+        "Predictive Prescription History",
+      ],
     },
     {
       icon: Calendar,
-      title: "Appointment Management",
-      description: "Advanced scheduling system with automated reminders, waitlist management, and multi-channel notifications.",
-      features: ["Online Booking", "SMS/Email Reminders", "Waitlist Management", "Resource Scheduling"],
-      color: "from-blue-500 to-cyan-500",
-      bgColor: "bg-blue-50"
+      title: "Smart Appointment Management",
+      description:
+        "AI-driven scheduling system with intelligent appointment optimization, automated reminders, and predictive waitlist management.",
+      features: [
+        "AI-Optimized Booking",
+        "Smart SMS/Email Reminders",
+        "Intelligent Waitlist Management",
+        "Predictive Resource Scheduling",
+      ],
     },
     {
       icon: Brain,
-      title: "AI-Powered Analytics",
-      description: "Machine learning algorithms for predictive analytics, treatment recommendations, and operational insights.",
-      features: ["Predictive Diagnostics", "Treatment Suggestions", "Resource Optimization", "Risk Assessment"],
-      color: "from-purple-500 to-violet-500",
-      bgColor: "bg-purple-50"
+      title: "Advanced AI Analytics",
+      description:
+        "Deep learning algorithms for predictive analytics, AI treatment recommendations, and intelligent operational insights.",
+      features: [
+        "AI Predictive Diagnostics",
+        "Intelligent Treatment Suggestions",
+        "Smart Resource Optimization",
+        "AI Risk Assessment",
+      ],
     },
     {
       icon: Shield,
-      title: "Security & Compliance",
-      description: "Bank-level security with HIPAA compliance, role-based access control, and comprehensive audit trails.",
-      features: ["HIPAA Compliance", "Data Encryption", "Access Control", "Audit Logging"],
-      color: "from-green-500 to-emerald-500",
-      bgColor: "bg-green-50"
+      title: "Quantum Security & Compliance",
+      description:
+        "Next-generation security with AI threat detection, HIPAA compliance, intelligent access control, and comprehensive audit trails.",
+      features: [
+        "AI-Enhanced HIPAA Compliance",
+        "Quantum Data Encryption",
+        "Smart Access Control",
+        "Intelligent Audit Logging",
+      ],
     },
     {
       icon: Users,
-      title: "Multi-Department Integration",
-      description: "Seamless workflow integration across all hospital departments with role-specific dashboards and permissions.",
-      features: ["Department Workflows", "Role-Based Access", "Inter-department Communication", "Unified Dashboard"],
-      color: "from-orange-500 to-yellow-500",
-      bgColor: "bg-orange-50"
+      title: "AI Multi-Department Integration",
+      description:
+        "Intelligent workflow integration across all hospital departments with AI-powered dashboards and smart role-based permissions.",
+      features: [
+        "AI-Optimized Department Workflows",
+        "Smart Role-Based Access",
+        "Intelligent Inter-department Communication",
+        "AI Unified Dashboard",
+      ],
     },
     {
       icon: Phone,
-      title: "Telehealth Platform",
-      description: "Integrated video consultation platform with e-prescriptions, digital monitoring, and remote patient care.",
-      features: ["Video Consultations", "Remote Monitoring", "Digital Prescriptions", "Patient Portal"],
-      color: "from-teal-500 to-cyan-500",
-      bgColor: "bg-teal-50"
+      title: "AI Telehealth Platform",
+      description:
+        "Intelligent video consultation platform with AI-assisted diagnostics, smart e-prescriptions, and AI-powered remote patient monitoring.",
+      features: [
+        "AI-Enhanced Video Consultations",
+        "Smart Remote Monitoring",
+        "Intelligent Digital Prescriptions",
+        "AI Patient Portal",
+      ],
     },
     {
       icon: Zap,
-      title: "Emergency Response System",
-      description: "Real-time emergency management with automated alerts, resource allocation, and critical care coordination.",
-      features: ["Emergency Alerts", "Resource Tracking", "Critical Care Protocols", "Response Automation"],
-      color: "from-red-600 to-orange-500",
-      bgColor: "bg-red-50"
+      title: "AI Emergency Response System",
+      description:
+        "Real-time AI emergency management with predictive alerts, intelligent resource allocation, and AI-powered critical care coordination.",
+      features: [
+        "AI Emergency Alerts",
+        "Smart Resource Tracking",
+        "AI Critical Care Protocols",
+        "Intelligent Response Automation",
+      ],
     },
     {
       icon: BarChart,
-      title: "Business Intelligence",
-      description: "Advanced reporting and analytics for operational efficiency, financial management, and strategic planning.",
-      features: ["Financial Reports", "Operational Metrics", "Performance Analytics", "Strategic Insights"],
-      color: "from-indigo-500 to-purple-500",
-      bgColor: "bg-indigo-50"
-    }
+      title: "AI Business Intelligence",
+      description:
+        "Advanced AI-powered reporting and analytics for operational efficiency, intelligent financial management, and strategic planning insights.",
+      features: [
+        "AI Financial Reports",
+        "Smart Operational Metrics",
+        "Intelligent Performance Analytics",
+        "AI Strategic Insights",
+      ],
+    },
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-space-gradient">
       <Navigation />
-      
+
       <div className="pt-20">
         {/* Hero Section */}
-        <section className="py-20 bg-gradient-to-br from-blue-50 to-white">
+        <section className="py-20 bg-space-gradient relative overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-                Comprehensive Healthcare
-                <span className="block bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">
+              <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 font-dmsans">
+                Comprehensive AI Healthcare
+                <span className="block bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
                   Management Services
                 </span>
               </h1>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-                Transform your healthcare facility with our complete suite of integrated services. 
-                From patient care to operational excellence, we provide everything you need to deliver exceptional healthcare.
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+                Transform your healthcare facility with our complete suite of
+                AI-integrated services. From intelligent patient care to
+                operational excellence, we provide everything you need to
+                deliver exceptional healthcare.
               </p>
-              <Button size="lg" className="bg-gradient-to-r from-blue-600 to-green-600 text-white px-8 py-3">
+              <Button
+                size="lg"
+                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 cta-glow hover:from-blue-700 hover:to-purple-700 transition-all duration-300 border-0"
+              >
                 Get Started Today
               </Button>
             </motion.div>
@@ -103,7 +148,7 @@ const Services = () => {
         </section>
 
         {/* Services Grid */}
-        <section className="py-20">
+        <section className="py-20 bg-space-gradient">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-2 gap-8">
               {services.map((service, index) => (
@@ -113,25 +158,33 @@ const Services = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300"
+                  className="glassmorphism rounded-2xl p-8 hover:border-blue-500/50 transition-all duration-300"
                 >
-                  <div className={`${service.bgColor} w-16 h-16 rounded-xl flex items-center justify-center mb-6`}>
-                    <service.icon className="w-8 h-8 text-gray-700" />
+                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-500 rounded-xl flex items-center justify-center mb-6 cta-glow">
+                    <service.icon className="w-8 h-8 text-white" />
                   </div>
-                  
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">{service.title}</h3>
-                  <p className="text-gray-600 mb-6">{service.description}</p>
-                  
+
+                  <h3 className="text-2xl font-bold text-white mb-4 font-dmsans">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-300 mb-6">{service.description}</p>
+
                   <div className="space-y-2">
                     {service.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-center text-sm text-gray-600">
-                        <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></div>
+                      <div
+                        key={idx}
+                        className="flex items-center text-sm text-gray-300"
+                      >
+                        <div className="w-1.5 h-1.5 bg-blue-400 rounded-full mr-3"></div>
                         {feature}
                       </div>
                     ))}
                   </div>
-                  
-                  <Button variant="outline" className="w-full mt-6">
+
+                  <Button
+                    variant="outline"
+                    className="w-full mt-6 border border-blue-500/30 text-gray-300 hover:bg-blue-500/10 hover:text-white hover:border-blue-400 transition-all duration-300 bg-transparent"
+                  >
                     Learn More
                   </Button>
                 </motion.div>
@@ -141,25 +194,34 @@ const Services = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-r from-blue-600 to-green-600">
+        <section className="py-20 bg-space-gradient">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
+              className="glassmorphism rounded-2xl p-12 border border-purple-500/30 cta-glow"
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 font-dmsans">
                 Ready to Transform Your Healthcare Facility?
               </h2>
-              <p className="text-xl text-blue-100 mb-8">
-                Join thousands of healthcare providers who trust our comprehensive HMS solution.
+              <p className="text-xl text-gray-300 mb-8">
+                Join thousands of healthcare providers who trust our
+                comprehensive AI-powered HMS solution.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" variant="secondary" className="px-8 py-3">
+                <Button
+                  size="lg"
+                  className="px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 transition-all duration-300 border-0 cta-glow"
+                >
                   Schedule Demo
                 </Button>
-                <Button size="lg" variant="outline" className="px-8 py-3 text-white border-white hover:bg-white hover:text-blue-600">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="px-8 py-3 border border-blue-500/30 text-gray-300 hover:bg-blue-500/10 hover:text-white hover:border-blue-400 transition-all duration-300 bg-transparent"
+                >
                   Contact Sales
                 </Button>
               </div>
