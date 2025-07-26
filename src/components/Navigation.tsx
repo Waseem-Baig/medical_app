@@ -12,7 +12,7 @@ const Navigation = () => {
     { name: "Services", href: "/services" },
     { name: "Features", href: "/features" },
     { name: "About", href: "/about" },
-    { name: "Contact", href: "#contact" },
+    { name: "Contact", href: "/#contact" },
   ];
 
   const portals = [
@@ -84,7 +84,7 @@ const Navigation = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                {item.href.startsWith("/") ? (
+                {item.href.startsWith("/") && !item.href.includes("#") ? (
                   <Link
                     to={item.href}
                     className="text-gray-300 hover:text-white transition-colors duration-200 font-medium text-sm xl:text-base"
@@ -160,7 +160,7 @@ const Navigation = () => {
           <div className="py-4 space-y-2 glassmorphism mt-2 rounded-lg border border-white/20">
             {navItems.map((item) => (
               <div key={item.name}>
-                {item.href.startsWith("/") ? (
+                {item.href.startsWith("/") && !item.href.includes("#") ? (
                   <Link
                     to={item.href}
                     className="block px-4 py-3 rounded-md text-gray-300 hover:text-white hover:bg-white/10 transition-colors duration-200 text-sm"
